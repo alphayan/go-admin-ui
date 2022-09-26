@@ -16,21 +16,21 @@
         >
 
           <!-- /* eslint-disable */ -->
-          <span slot-scope="{ node, data }" class="custom-tree-node">
+          <span slot-scope="{ node, data1 }" class="custom-tree-node">
             <span>
               <i
                 v-show="node.childNodes.length > 0"
                 :class="node.expanded ? 'el-icon-folder-opened icon' : 'el-icon-folder icon'"
               />
-              <span v-if="rename.status && rename.node.id === data.id">
+              <span v-if="rename.status && rename.node.id === data1.id">
                 <input
                   ref="nodeInput"
                   v-focus="rename.status"
                   :value="node.label"
                   placeholder="请输入目录名称"
                   type="text"
-                  @blur.stop="handleBlur(node, data)"
-                  @keyup.enter="handleBlur(node, data)"
+                  @blur.stop="handleBlur(node, data1)"
+                  @keyup.enter="handleBlur(node, data1)"
                 >
               </span>
               <span v-else class="file-name">
