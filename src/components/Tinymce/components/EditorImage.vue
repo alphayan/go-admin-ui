@@ -31,7 +31,6 @@ export default {
   },
   methods: {
     checkAllSuccess() {
-      debugger
       return Object.keys(this.listObj).every(item => this.listObj[item].hasSuccess)
     },
     handleFile() {
@@ -42,7 +41,6 @@ export default {
     },
     handleFileConfirm(e) {
       this.dialogVisible = false
-      console.log(e)
       this.$emit('successCBK', e)
     }
   }
@@ -52,7 +50,7 @@ export default {
 <style lang="scss" scoped>
 .editor-slide-upload {
   margin-bottom: 20px;
-  /deep/ .el-upload--picture-card {
+  ::v-deep .el-upload--picture-card {
     width: 100%;
   }
 }
